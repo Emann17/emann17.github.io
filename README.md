@@ -15,16 +15,6 @@ Personal website for Emmanuel (Ope) Odubela, Computer Software Engineering stude
 
 Plain HTML, CSS and JavaScript — no frameworks or build step. Hosted on GitHub Pages.
 
-## Running locally
-
-Clone the repo and open `index.html` in a browser, or serve the folder:
-
-```bash
-python3 -m http.server 8000
-```
-
-then visit http://localhost:8000.
-
 ## Contact
 
 - Email: emmanuel.a.odubela@gmail.com
