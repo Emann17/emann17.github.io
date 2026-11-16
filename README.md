@@ -13,7 +13,7 @@ Personal website for Emmanuel Odubela, Computer Software Engineering student at 
 
 ## Built with
 
-Plain HTML, CSS and JavaScript — no frameworks or build step. Hosted on GitHub Pages.
+Plain HTML, CSS and JavaScript 
 
 ## Contact
 
