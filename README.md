@@ -1,6 +1,6 @@
 # Emmanuel Odubela — Portfolio
 
-Personal website for Emmanuel (Ope) Odubela, Computer Software Engineering student at the University of Alberta.
+Personal website for Emmanuel Odubela, Computer Software Engineering student at the University of Alberta.
 
 **Live site:** https://emann17.github.io
 
