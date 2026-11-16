@@ -150,6 +150,7 @@ li { margin-bottom: 0.4rem; }
 
 /* Experience */
 .jobs { display: flex; flex-direction: column; gap: 32px; }
+.h2-spaced { margin-top: 56px; }
 .job {
     display: grid;
     grid-template-columns: 150px 1fr;
