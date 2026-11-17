@@ -52,16 +52,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // Highlight the nav link for the section currently on screen
     var sections = document.querySelectorAll("section[id]");
     var navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
-    if ("IntersectionObserver" in window && sections.length) {
-        var spy = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(function (a) {
-                        a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id);
-                    });
-                }
+    function updateActiveLink() {
+        if (!sections.length) return;
+        var current = null;
+        var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+        if (atBottom) {
+            // Short last sections (Contact) can't scroll up to the trigger line on tall screens
+            current = sections[sections.length - 1];
+        } else {
+            var line = window.innerHeight * 0.4;
+            sections.forEach(function (s) {
+                if (s.getBoundingClientRect().top <= line) current = s;
             });
-        }, { rootMargin: "-40% 0px -55% 0px" });
-        sections.forEach(function (s) { spy.observe(s); });
+        }
+        navLinks.forEach(function (a) {
+            a.classList.toggle("active", !!current && a.getAttribute("href") === "#" + current.id);
+        });
     }
+    window.addEventListener("scroll", updateActiveLink, { passive: true });
+    window.addEventListener("resize", updateActiveLink);
+    updateActiveLink();
 });
